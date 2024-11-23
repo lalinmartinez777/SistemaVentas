@@ -36,7 +36,7 @@ Route::resources([
     'clientes' => clienteController::class,
     //'proveedores' => proveedorController::class,
     'compras' => compraController::class,
-    //'ventas' => ventaController::class,
+    'ventas' => ventaController::class,
     //'users' => userController::class,
     //'roles' => roleController::class,
     //'profile' => profileController::class
