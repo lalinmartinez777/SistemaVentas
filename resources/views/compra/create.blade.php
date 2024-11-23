@@ -96,7 +96,7 @@
                                         </tr>
                                         <tr>
                                             <th></th>
-                                            <th colspan="4">IGV %</th>
+                                            <th colspan="4">IVA %</th>
                                             <th colspan="2"><span id="igv">0</span></th>
                                         </tr>
                                         <tr>

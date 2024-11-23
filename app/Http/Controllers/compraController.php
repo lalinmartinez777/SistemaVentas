@@ -50,7 +50,7 @@ class compraController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    /**public function store(StoreCompraRequest $request)
+    public function store(StoreCompraRequest $request)
     {
         try{
             DB::beginTransaction();
@@ -98,7 +98,7 @@ class compraController extends Controller
         }
 
         return redirect()->route('compras.index')->with('success','compra exitosa');
-    }*/
+    }
 
     /**
      * Display the specified resource.
