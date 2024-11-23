@@ -26,25 +26,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Route::get('/',[homeController::class,'index'])->name('panel');
+Route::get('/',[homeController::class,'index'])->name('panel');
 
 Route::resources([
     'categorias' => categoriaController::class,
-    //'presentaciones' => presentacioneController::class,
-    //'marcas' => marcaController::class,
+    'presentaciones' => presentacioneController::class,
+    'marcas' => marcaController::class,
     'productos' => ProductoController::class,
     'clientes' => clienteController::class,
-    //'proveedores' => proveedorController::class,
+    'proveedores' => proveedorController::class,
     'compras' => compraController::class,
     'ventas' => ventaController::class,
-    //'users' => userController::class,
-    //'roles' => roleController::class,
-    //'profile' => profileController::class
+    'users' => userController::class,
+    'roles' => roleController::class,
+    'profile' => profileController::class
 ]);
 
-//Route::get('/login',[loginController::class,'index'])->name('login');
-//Route::post('/login',[loginController::class,'login']);
-//Route::get('/logout',[logoutController::class,'logout'])->name('logout');
+Route::get('/login',[loginController::class,'index'])->name('login');
+Route::post('/login',[loginController::class,'login']);
+Route::get('/logout',[logoutController::class,'logout'])->name('logout');
 
 Route::get('/401', function () {
     return view('pages.401');
