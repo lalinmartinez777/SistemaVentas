@@ -2,21 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCaracteristicaRequest;
 use App\Http\Requests\UpdateCategoriaRequest;
 use App\Models\Caracteristica;
 use App\Models\Categoria;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class categoriaController extends Controller
 {
+
+    function __construct()
+    {
+        //$this->middleware('permission:ver-categoria|crear-categoria|editar-categoria|eliminar-categoria', ['only' => ['index']]);
+        //$this->middleware('permission:crear-categoria', ['only' => ['create', 'store']]);
+        //$this->middleware('permission:editar-categoria', ['only' => ['edit', 'update']]);
+        //$this->middleware('permission:eliminar-categoria', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $categorias = Categoria::with('caracteristica')->latest()->get();
+
         return view('categoria.index', ['categorias' => $categorias]);
     }
 
@@ -25,14 +35,13 @@ class categoriaController extends Controller
      */
     public function create()
     {
-        //
         return view('categoria.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreCaracteristicaRequest $request)
     {
         try {
             DB::beginTransaction();
